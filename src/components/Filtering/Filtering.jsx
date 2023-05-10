@@ -5,7 +5,6 @@ import Location from "./Location";
 import PriceRangeInput from "./Price";
 import CustomCheckBox from "./CheckBox";
 import SelectRange from "./SelectRange";
-import Select from "./Select";
 import CustomSelect from "./Select";
 
 const Filtering = () => {
