@@ -8,8 +8,11 @@ import SelectRange from "./SelectRange";
 import CustomSelect from "./Select";
 
 const Filtering = () => {
+    const tg = window.Telegram.WebApp;
+
     return (
         <div className={"filtering"}>
+            <h1>{tg.initDataUnsafe?.user?.username}</h1>
             <h3 style={{margin: "10px"}}>Фильтрация</h3>
             <CustomSelect/>
             <PriceRangeInput/>

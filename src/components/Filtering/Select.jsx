@@ -10,7 +10,7 @@ export default function CustomSelect() {
 
     return (
         <div>
-            <FormControl color="secondary" sx={{marginTop: '10px', width: '80vw'}}>
+            <FormControl color="secondary" sx={{marginTop: '10px', width: '90vw'}}>
                 <InputLabel id="demo-simple-select-autowidth-label">Тип жилья</InputLabel>
                 <Select value={houseType} onChange={handleChange} label="Тип жилья">
                     <MenuItem value={1}>Квартиры</MenuItem>

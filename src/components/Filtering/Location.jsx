@@ -32,7 +32,7 @@ export default function Location() {
             inputValue={inputValue}
             onInputChange={handleInputChange}
             options={locations}
-            sx={{width: "80vw", marginTop: '10px'}}
+            sx={{width: "90vw", marginTop: '10px'}}
             renderInput={(params) => <TextField color="secondary" {...params} label="Местроположение"/>}
         />
     );
