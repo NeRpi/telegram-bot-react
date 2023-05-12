@@ -9,16 +9,18 @@ import CustomSelect from "./Select";
 import useTelegram from "../../hooks/useTelegram";
 
 const Filtering = () => {
-    const {tg, sendData} = useTelegram();
+    const {tg, sendData, onToggleButton} = useTelegram();
+    onToggleButton();
     const onSendData = useCallback(() => {
         sendData()
-    })
+    }, [sendData])
+
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData);
         }
-    }, [onSendData()])
+    }, [onSendData, tg])
 
     return (
         <div className={"filtering"}>
