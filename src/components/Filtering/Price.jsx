@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import {TextField} from "@mui/material";
+import useTelegram from "../../hooks/useTelegram";
 
-function PriceRangeInput() {
+function PriceRangeInput(props) {
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
     const [error, setError] = useState(false);
+    const {setData} = useTelegram();
 
     function handleMinPriceChange(event) {
         setMinPrice(event.target.value);
@@ -12,6 +14,7 @@ function PriceRangeInput() {
             setError(true);
         } else {
             setError(false);
+            setData({[props?.key]: [event.target.value, maxPrice]});
         }
     }
 
@@ -21,6 +24,7 @@ function PriceRangeInput() {
             setError(true);
         } else {
             setError(false);
+            setData({[props?.keyData]: [minPrice, event.target.value]});
         }
     }
 

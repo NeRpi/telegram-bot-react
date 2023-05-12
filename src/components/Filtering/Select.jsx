@@ -1,11 +1,14 @@
 import * as React from 'react';
 import {InputLabel, MenuItem, FormControl, Select} from '@mui/material';
+import useTelegram from "../../hooks/useTelegram";
 
-export default function CustomSelect() {
+export default function CustomSelect(props) {
     const [houseType, setHouseType] = React.useState(1);
+    const {setData} = useTelegram();
 
     const handleChange = (event) => {
         setHouseType(event.target.value);
+        setData({[props?.keyData]: event.target.value});
     };
 
     return (

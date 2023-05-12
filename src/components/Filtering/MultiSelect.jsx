@@ -1,14 +1,17 @@
 import * as React from "react";
 import {OutlinedInput, InputLabel, MenuItem, FormControl, Select} from "@mui/material";
+import useTelegram from "../../hooks/useTelegram";
 
 export default function MultipleSelect(props) {
     const [countRooms, setCountRooms] = React.useState([]);
+    const {setData} = useTelegram();
 
     const handleChange = (event) => {
         const {
             target: {value},
         } = event;
         setCountRooms(typeof value === "string" ? value.split(",") : value);
+        setData({[props?.keyData]: value});
     };
 
     return (

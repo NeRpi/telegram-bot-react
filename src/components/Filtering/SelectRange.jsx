@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Select, FormControl, MenuItem} from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
+import useTelegram from "../../hooks/useTelegram";
 
 function SelectRange(props) {
     const [minSquare, setMinSquare] = useState(props.placeholders[0]);
@@ -8,15 +9,18 @@ function SelectRange(props) {
     const values = props.values;
     const [maxValues, setMaxValues] = useState(values);
     const [minValues, setMinValues] = useState(values);
+    const {setData} = useTelegram();
 
     function handleMinPriceChange(event) {
         setMinSquare(event.target.value);
         setMaxValues(values.slice(values.indexOf(event.target.value) + 1));
+        setData({[props?.keyData]: [event.target.value, maxSquare]});
     }
 
     function handleMaxPriceChange(event) {
         setMaxSquare(event.target.value);
         setMinValues(values.slice(0, values.indexOf(event.target.value)));
+        setData({[props?.keyData]: [minSquare, event.target.value]});
     }
 
     return (

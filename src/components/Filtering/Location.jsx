@@ -2,10 +2,12 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import $ from "jquery";
+import useTelegram from "../../hooks/useTelegram";
 
-export default function Location() {
+export default function Location(props) {
     const [inputValue, setInputValue] = React.useState("");
     const [locations, setLocations] = React.useState([]);
+    const {setData} = useTelegram();
 
     const handleInputChange = (event, value) => {
         setInputValue(value);
@@ -23,6 +25,8 @@ export default function Location() {
                 );
             },
         });
+
+        setData({[props?.keyData]: value})
     };
 
     return (
