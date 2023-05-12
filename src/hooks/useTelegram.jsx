@@ -44,6 +44,7 @@ function useTelegram() {
     }
 
     return {
+        onToggleButton,
         sendData,
         setData,
         onClose,
