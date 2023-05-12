@@ -33,9 +33,9 @@ function CustomCheckBox(props) {
     function buttonOnMount(text) {
         selectButtons[text] = !selectButtons[text];
         const result = Object.keys(selectButtons).map((key, index) => {
-                if (selectButtons[key]) return index;
+                return selectButtons[key] ? index : null;
             }
-        ).filter(index => index !== undefined);
+        ).filter(index => index !== null);
         setData({[props?.keyData]: result})
     }
 
