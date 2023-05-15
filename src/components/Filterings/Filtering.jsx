@@ -3,7 +3,6 @@ import "./Filtering.css";
 import PriceRangeInput from "../FilteringComponent/Price";
 import CustomSelect from "../FilteringComponent/Select";
 import useTelegram from "../../hooks/useTelegram";
-import {Button} from "@mui/material";
 import ApartmentFiltering from "./ApartmentFiltering";
 import HouseFiltering from "./HouseFiltering";
 import RoomFiltering from "./RoomsFiltering";
@@ -25,15 +24,13 @@ const HousingCategories = {
 }
 
 const Filtering = () => {
-    const {tg, sendData, onToggleButton, clearData} = useTelegram();
+    const {tg, sendData, clearData} = useTelegram();
     const [renderElement, setRenderElement] = useState(<ApartmentFiltering/>);
     const handleCategories = (value) => {
         clearData();
         setRenderElement(HousingCategories[value]);
     }
-
-    onToggleButton();
-
+    tg.MainButton.show();
     const onSendData = useCallback(() => {
         sendData()
     }, [sendData])
@@ -61,7 +58,6 @@ const Filtering = () => {
             <PriceRangeInput keyData={'prc'}/>
             <Location keyData={'gtsy'}/>
             {renderElement}
-            <Button onClick={onSendData}>Send data</Button>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 const tg = window.Telegram.WebApp;
 
 let data = {
-    cat: {fieldMessage: "Тип жилья", messageValue: "Квартиры", urlValue: "cat=1010"},
+    cat: {fieldValue: "Тип жилья", messageValue: "Квартиры", urlValue: "cat=1010"},
     sort: null,
     prc: null,
     gtsy: null,
