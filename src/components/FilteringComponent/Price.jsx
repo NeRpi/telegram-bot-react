@@ -10,11 +10,21 @@ function PriceRangeInput(props) {
 
     function handleMinPriceChange(event) {
         setMinPrice(event.target.value);
-        if (event.target.value > maxPrice) {
+        if (event.target.value > maxPrice && maxPrice !== '') {
             setError(true);
         } else {
             setError(false);
-            setData({[props?.key]: [event.target.value, maxPrice]});
+            if (maxPrice === '' && event.target.value === '') {
+                setData({[props?.keyData]: null});
+            } else {
+                setData({
+                    [props?.keyData]: {
+                        fieldValue: "Цена",
+                        messageValue: (event.target.value !== '' ? `от ${event.target.value} ` : '') + (maxPrice !== '' ? `до ${maxPrice} ` : '') + 'Бел.руб',
+                        urlValue: `prc=r:${event.target.value}00,${maxPrice !== '' ? maxPrice : 10000000}00`
+                    }
+                });
+            }
         }
     }
 
@@ -22,9 +32,20 @@ function PriceRangeInput(props) {
         setMaxPrice(event.target.value);
         if (event.target.value < minPrice) {
             setError(true);
+            setData({[props?.keyData]: null});
         } else {
             setError(false);
-            setData({[props?.keyData]: [minPrice, event.target.value]});
+            if (minPrice === '' && event.target.value === '') {
+                setData({[props?.keyData]: null});
+            } else {
+                setData({
+                    [props?.keyData]: {
+                        fieldValue: "Цена",
+                        messageValue: (minPrice !== '' ? `от ${minPrice} ` : '') + (event.target.value !== '' ? `до ${event.target.value} ` : '') + 'Бел.руб',
+                        urlValue: `&prc=r:${minPrice}00,${event.target.value !== '' ? event.target.value : 10000000}00`
+                    }
+                });
+            }
         }
     }
 
@@ -36,10 +57,10 @@ function PriceRangeInput(props) {
                     "& .MuiOutlinedInput-root": {
                         borderRadius: "8px 0px 0px 8px",
                         width: "45vw",
-                        marginTop: '10px'
+                        marginTop: '10px',
                     },
                     "& .MuiInputLabel-root": {
-                        marginTop: '10px'
+                        marginTop: '10px',
                     }
                 }}
                 label="Цена"

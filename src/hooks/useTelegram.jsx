@@ -1,23 +1,10 @@
 const tg = window.Telegram.WebApp;
 
-const data = {
-    typeHouse: 1,
-    price: null,
-    location: null,
-    roomsCount: null,
-    totalArea: null,
-    livingArea: null,
-    kitchenArea: null,
-    bathroom: null,
-    balcony: null,
-    ceilingHeight: null,
-    repair: null,
-    wallMaterial: null,
-    floor: null,
-    floorsHouse: null,
-    yearBuild: null,
-    windowOverlook: null,
-    homeImprovement: null,
+let data = {
+    cat: 1010,
+    sort: null,
+    prc: null,
+    gtsy: null,
 };
 
 function useTelegram() {
@@ -40,16 +27,28 @@ function useTelegram() {
     }
 
     const sendData = () => {
-        tg.sendData(JSON.stringify(data));
+        fetch('http://localhost:8000/web-data', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({data, queryId: tg?.initDataUnsafe?.query_id})
+        }).then(r => console.log(r))
+            .catch(e => console.log(e));
+    }
+
+    const clearData = () => {
+        const {cat, sort, prc, gtsy} = data;
+        data = {cat, sort, prc, gtsy};
     }
 
     return {
         onToggleButton,
         sendData,
+        clearData,
         setData,
         onClose,
         tg,
-        user: tg?.initDataUnsafe?.user
+        user: tg?.initDataUnsafe?.user,
+        queryId: tg?.initDataUnsafe?.query_id,
     }
 }
 
