@@ -44,7 +44,7 @@ function SelectRange({keyData, title, values, placeholders}) {
 
     return (
         <div>
-            <FormControl sx={{marginTop: '10px', marginLeft: '10px', minWidth: '45vw'}}>
+            <FormControl sx={{marginTop: '10px', minWidth: '40vw'}}>
                 <InputLabel color="secondary" id="demo-simple-select-autowidth-label">{title}</InputLabel>
                 <Select style={{borderBottomRightRadius: "0px", borderTopRightRadius: "0px"}} value={minSquare}
                         color="secondary"
@@ -54,7 +54,7 @@ function SelectRange({keyData, title, values, placeholders}) {
                     {minValues.map(value => <MenuItem value={value}>{value}</MenuItem>)}
                 </Select>
             </FormControl>
-            <FormControl sx={{marginTop: '10px', minWidth: '45vw'}}>
+            <FormControl sx={{marginTop: '10px', minWidth: '40vw'}}>
                 <Select style={{borderBottomLeftRadius: "0px", borderTopLeftRadius: "0px"}} value={maxSquare}
                         color="secondary"
                         onChange={handleMaxPriceChange}>

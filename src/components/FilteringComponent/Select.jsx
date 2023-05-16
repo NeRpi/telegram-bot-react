@@ -22,7 +22,7 @@ export default function CustomSelect({values, keyData, title, onChange}) {
 
     return (
         <div>
-            <FormControl color="secondary" sx={{marginTop: '10px', width: '90vw'}}>
+            <FormControl color="secondary" sx={{marginTop: '10px', width: '80vw'}}>
                 <InputLabel id="demo-simple-select-autowidth-label">{title}</InputLabel>
                 <Select value={houseType} onChange={handleChange} label={title}>
                     {texts?.map((val, index) => {

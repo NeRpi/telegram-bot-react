@@ -26,7 +26,7 @@ export default function MultipleSelect({keyData, title, values}) {
 
     return (
         <div>
-            <FormControl color="secondary" sx={{width: "90vw", marginLeft: '10px', marginTop: "10px"}}>
+            <FormControl color="secondary" sx={{width: "80vw", marginTop: "10px"}}>
                 <InputLabel id="demo-multiple-name-label">{title}</InputLabel>
                 <Select
                     multiple

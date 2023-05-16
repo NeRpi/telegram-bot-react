@@ -6,7 +6,7 @@ import SelectRange from "../FilteringComponent/SelectRange";
 
 const ApartmentFiltering = () => {
     return (
-        <div>
+        <div className={"filtering-type"}>
             <MultipleSelect keyData={'rms'} title="Количество комнат" values={[1, 2, 3, ["4+", 4]]}/>
             <SelectRange keyData={'st'} placeholders={['От', 'До']} title={"Общая площадь"}
                          values={[0, 25, 35, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200]}/>

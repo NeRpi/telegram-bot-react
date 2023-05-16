@@ -5,3 +5,10 @@
     align-items: center;
     margin: 20px;
 }
+
+.filtering-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

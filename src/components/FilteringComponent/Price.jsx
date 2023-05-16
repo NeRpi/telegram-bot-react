@@ -56,7 +56,7 @@ function PriceRangeInput(props) {
                 sx={{
                     "& .MuiOutlinedInput-root": {
                         borderRadius: "8px 0px 0px 8px",
-                        width: "45vw",
+                        width: "40vw",
                         marginTop: '10px',
                     },
                     "& .MuiInputLabel-root": {
@@ -77,7 +77,7 @@ function PriceRangeInput(props) {
                 sx={{
                     "& .MuiOutlinedInput-root": {
                         borderRadius: "0px 8px 8px 0px",
-                        width: "45vw",
+                        width: "40vw",
                         marginTop: '10px'
                     },
                 }}

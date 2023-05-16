@@ -6,7 +6,7 @@ import SelectRange from "../FilteringComponent/SelectRange";
 
 const HouseFiltering = () => {
     return (
-        <div>
+        <div className={"filtering-type"}>
             <MultipleSelect keyData={'hnfl'} title="Этажность" values={[1, 2, 3, ["4+", 5]]}/>
             <CustomCheckBox keyData={'hts'} checkBoxLabel="Вид объекта" typeBox={'or'}
                             buttonsText={[["Дом", 1], ["Котеджи", 5], ["Дача", 10], ["Таунхаус", 25], ["Часть дома", 15], ["Прочее", 20]]}/>

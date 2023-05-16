@@ -6,7 +6,7 @@ import MultipleSelect from "../FilteringComponent/MultiSelect";
 
 const NewBuildFiltering = () => {
     return (
-        <div>
+        <div className={"filtering-type"}>
             <SelectRange keyData={'saa'} placeholders={['От', 'До']} title={"Площадь учатска, сот."}
                          values={[0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 25, 30, 35, 40]}/>
             <MultipleSelect keyData={'nwbnf'} title="Этажность дома"

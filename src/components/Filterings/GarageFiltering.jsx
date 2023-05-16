@@ -6,7 +6,7 @@ import CustomSelect from "../FilteringComponent/Select";
 
 const GarageFiltering = () => {
     return (
-        <div>
+        <div className={"filtering-type"}>
             <CustomSelect keyData={'gtp'} title="Вид объекта"
                           values={[["Вид объекта", ""], ["Машиноместо", 1], ["Гараж", 5], ["Бокс", 10], ["Прочее", 15]]}/>
             <SelectRange keyData={'gtp'} placeholders={['От', 'До']} title={"Общая площадь"}

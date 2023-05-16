@@ -7,7 +7,7 @@ import CustomSelect from "../FilteringComponent/Select";
 
 const CommercialFiltering = () => {
     return (
-        <div>
+        <div className={"filtering-type"}>
             <CustomSelect keyData={'prt'} title={"Тип здания"} typeBox={'or'}
                           values={["Любой", "Офисы", "Магазины, торговые помещения", "Промышленные помещения", "Склад", ["Сфера услуг", 10], ["Прочая коммерческая", 6]]}/>
             <SelectRange keyData={'st'} placeholders={['От', 'До']} title={"Общая площадь"}
